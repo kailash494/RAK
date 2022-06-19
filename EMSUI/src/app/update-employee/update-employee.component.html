@@ -1,0 +1,39 @@
+<div class="col-md-6 offset-md-3">
+    <h3 style="text-align: center;">Update Employee Details</h3>
+    <form ngNativeValidate (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label>Employee No </label>
+            <input type="number" class="form-control" required id="eNo" maxlength="10" [(ngModel)]="employee.eNo"
+                name="eNo">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Employee Name </label>
+            <input type="text" class="form-control" required id="eName" maxlength="100"
+                [(ngModel)]="employee.employeeName" name="eName">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Date of Joining </label>
+            <input type="date" required class="form-control" id="doj" maxlength="10" [(ngModel)]="employee.doj"
+                name="doj">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Department </label>
+            <select class="form-control" required id="dCode" maxlength="2" [(ngModel)]="employee.department.dId"
+                name="dCode">
+                <option *ngFor="let department of departments;" value='{{department.dId}}'>{{department.dName}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Salary </label>
+            <input type="number" required class="form-control" maxlength="10" id="salary" [(ngModel)]="employee.salary"
+                name="salary">
+        </div>
+        <br>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>

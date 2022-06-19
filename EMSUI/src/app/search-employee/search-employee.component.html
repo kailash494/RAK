@@ -1,0 +1,30 @@
+<div class="col-md-6 offset-md-3">
+    <div style="text-align: center;">
+        <h3>Search Employee</h3>
+    </div>
+    <form>
+        <div class="form-group">
+            <label>Employee No </label>
+            <input type="number" class="form-control" id="eNo" onKeyPress="if(this.value.length==10) return false;"
+                [(ngModel)]="employee.eNo" name="eNo">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Employee Name </label>
+            <input type="text" class="form-control" id="eName" maxlength="100" [(ngModel)]="employee.employeeName"
+                name="eName">
+        </div>
+        <br>
+        <div class="form-group" style="text-align: center;">
+            <button class="btn btn-success" style="margin-left:1em" (click)="onSubmit()" type="submit">Search</button>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label>Response </label>
+            <code>
+                <pre>{{placeDetail |json}}</pre>
+            </code>
+        </div>
+    </form>
+</div>
